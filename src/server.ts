@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 import axios from "axios";
+import userRouter from "./routes/userRouter";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -30,6 +31,8 @@ app.get("/posts", async (req: Request, res: Response) => {
     posts: response?.data,
   });
 });
+
+app.use("/api/v1/users", userRouter);
 
 // Start server
 app.listen(PORT, () => {
