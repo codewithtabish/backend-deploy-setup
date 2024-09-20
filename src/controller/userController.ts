@@ -6,6 +6,7 @@ const getAllUser = async (req: Request, response: Response) => {
   return response.status(200).json({
     status: true,
     message: "All users are here ",
+    code: 200,
     users: data?.data,
   });
 };
